@@ -1,0 +1,85 @@
+
+body {
+    background-color: #ffff;
+}
+
+label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 20px;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #a9d891;
+    font-size: 35px;
+    position: relative;
+    text-align: left;
+
+}
+
+p2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #77a384;
+    font-size: 20px;
+    position: relative;
+    text-align: left;
+
+
+}
+
+img {
+    float: right;
+    padding: 100px;
+}
+
+p4 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-size: 20px;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: initial;
+    appearance: initial;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin-right: 7px;
+    border-radius: 5px;
+    background: gray;
+    position: relative;
+    cursor: pointer;
+}
+input[type="checkbox"]:checked {
+    background: #a9d891;
+}
+
+input[type="checkbox"]:checked:after {
+    content: "\2713";
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+button {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #77a384;
+    color: white;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #597762; 
+}
