@@ -54,6 +54,7 @@ start.addEventListener('click', (event) => {
 });
 
 nextpage.addEventListener('click', (event) => {
+    // Setting the previous/next page and the result buttons to be visible or not depending on the page.
     if (page == 5) {
         setDisplay(nextpage, "none");
         setDisplay(result, "inline")
@@ -62,17 +63,21 @@ nextpage.addEventListener('click', (event) => {
     if (page == 1) {
         setDisplay(previouspage, "inline");
     }
+    // - //
 
+    // Stop displaying the current page.
     setDisplay(document.querySelector('#p'+page), "none");
     
     if (page != 6) {
         page += 1
     };
 
+    // Show the updated page.
     setDisplay(document.querySelector('#p'+page), "inline");
 });
 
 previouspage.addEventListener('click', (event) => {
+    // Setting the previous/next buttons to be visible or not depending on the page.
     if (page ==  2) {
         setDisplay(previouspage, "none");
     }
@@ -80,13 +85,17 @@ previouspage.addEventListener('click', (event) => {
     if (page == 6) {
         setDisplay(nextpage, "inline");
     };
+    // - //
 
+
+    // Stop displaying the current page.
     setDisplay(document.querySelector('#p'+page), "none");
     
     if (page != 1) {
         page -= 1
     };
 
+    // Display the updated page.
     setDisplay(document.querySelector('#p'+page), "inline");
 });
 
@@ -100,14 +109,14 @@ result.addEventListener('click', (event) => {
     let checkboxes = document.querySelectorAll('input[name="q"]:checked');
     let values = [];
     checkboxes.forEach((checkbox) => {
-        values.push(checkbox.value); 
+        values.push(checkbox.value);  // Push all the values of the checkboxes into an array.
     });
-    R = 0;
-        I = 0;
-        A = 0;
-        S = 0;
-        E = 0;
-        C = 0;
+    R = 0; // Setting all the values to 0.
+    I = 0;
+    A = 0;
+    S = 0;
+    E = 0;
+    C = 0;
     for (let i = 0; i < values.length; i++) { // Counting the value of every response of RIASEC.
         if (values[i] == "R") {
             R += 1
@@ -123,7 +132,7 @@ result.addEventListener('click', (event) => {
             C += 1
         } else {
             console.log("Error counting scores, invalid answer.") // If somehow a value isn't RIASEC, this will print.
-        };
+        }; // Counting the scores.
     };
     console.log('');
     console.log('');
@@ -134,7 +143,7 @@ result.addEventListener('click', (event) => {
     console.log(`A = ${A}`);
     console.log(`S = ${S}`);
     console.log(`E = ${E}`);
-    console.log(`C = ${C}`);
+    console.log(`C = ${C}`); // Printing them for debugging purposes.
 
 
     function showResult() {
@@ -147,9 +156,9 @@ result.addEventListener('click', (event) => {
             <li> E - ${E} </li>
             <li> C - ${C} </li>
         
-        </ul>`
+        </ul>` // Setting the text to the results.
     };
 
     showResult();
-    setDisplay(resultsDisplay, "inline");
+    setDisplay(resultsDisplay, "inline"); // Showing the results throught a <p>
 });  
