@@ -42,34 +42,34 @@ start.addEventListener('click', (event) => {
     
     // Button Display
     setDisplay(nextpage, "inline");
+    setDisplay(previouspage, "inline")
     setDisplay(start, "none");
-
-
-    // Question Display
-    /*
-    We only show the first question because
-    this is the start button.
-    */
     setDisplay(p1, "inline"); 
 });
 
 nextpage.addEventListener('click', (event) => {
-    // Setting the previous/next page and the result buttons to be visible or not depending on the page.
-    if (page == 5) {
-        setDisplay(nextpage, "none");
-        setDisplay(result, "inline")
-    };
+    // If the page is going to be changed to 7, disable the button and show the result button.
+    if (page == 6) {
+        setDisplay(result, "inline");
+        nextpage.setAttribute('style', 'cursor: default;');
+        nextpage.setAttribute('disabled', true);
 
-    if (page == 1) {
-        setDisplay(previouspage, "inline");
+    // If the page is not 7, then we can always click the next page button, so make it enabled.
+    } else if (page != 7) { 
+        nextpage.setAttribute('style', 'cursor: pointer;');
+        nextpage.removeAttribute('disabled');
     }
-    // - //
 
+    // If the page is going to be changed to 2, enable the previous page button.
+    if (page == 1) {
+        previouspage.setAttribute('style', 'cursor: pointer;');
+        previouspage.removeAttribute('disabled');
+    }
     // Stop displaying the current page.
     setDisplay(document.querySelector('#p'+page), "none");
     
-    if (page != 6) {
-        page += 1
+    if (page != 7) {
+        page += 1;
     };
 
     // Show the updated page.
@@ -77,22 +77,30 @@ nextpage.addEventListener('click', (event) => {
 });
 
 previouspage.addEventListener('click', (event) => {
-    // Setting the previous/next buttons to be visible or not depending on the page.
-    if (page ==  2) {
-        setDisplay(previouspage, "none");
-    }
+    // If the page is going to be changed to 6, enable the next page button.
+    if (page == 7) {
+        setDisplay(result, "none");
+        nextpage.setAttribute('style', 'cursor: pointer;');
+        nextpage.removeAttribute('disabled');
 
-    if (page == 6) {
-        setDisplay(nextpage, "inline");
     };
-    // - //
 
+    // If the page is going to be changed to 1, disable the previous page button.
+    if (page == 2) {
+        previouspage.setAttribute('style', 'cursor: default;')   
+        previouspage.setAttribute('disabled', true);    
+
+    // If the page is not 1, enable the previous page button.
+    } else if (page != 1) {
+        nextpage.setAttribute('style', 'cursor: pointer;');
+        nextpage.removeAttribute('disabled');
+    }
 
     // Stop displaying the current page.
     setDisplay(document.querySelector('#p'+page), "none");
     
     if (page != 1) {
-        page -= 1
+        page -= 1;
     };
 
     // Display the updated page.

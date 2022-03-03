@@ -52,6 +52,7 @@ input[type="checkbox"] {
     position: relative;
     cursor: pointer;
 }
+
 input[type="checkbox"]:checked {
     background: #a9d891;
 }
@@ -68,6 +69,7 @@ input[type="checkbox"]:checked:after {
     transform: translate(-50%,-50%);
 }
 
+
 button {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 30px;
@@ -79,6 +81,7 @@ button {
     color: white;
     cursor: pointer;
 }
+
 
 button:active {
     background-color: #597762; 
